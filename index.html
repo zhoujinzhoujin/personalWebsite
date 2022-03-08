@@ -1,4 +1,19 @@
-<h1 id="jin-zhou">Jin Zhou</h1>
-<p>I am a second-year Ph.D. candidate in the Department of Electrical and Computer Engineering at UMass Amherst. </p>
-<p>My advisor is Prof. Tongping Liu: <a href="https://people.umass.edu/tongping/">https://people.umass.edu/tongping/</a></p>
+<h1>Jin Zhou</h1>
+
+<p>Email Address: jinzhou@umass.edu | <a href="linkedin.com/in/jin-zhou-1ab22b231">Linkedin</a></p>
+
+<p>I am a third-year Ph.D. student in the Department of Electrical and Computer Engineering at UMass Amherst. </p>
+
+<p>My advisor is <a href="https://people.umass.edu/tongping/">Prof. Tongping Liu</a>.</p>
+
 <p>My research interests are profiling, software performance, and operating systems.</p>
+
+<h2>Projects</h2>
+
+<h3>MemPerf: Profiling Allocator-Induced Performance Slowdowns</h3>
+<p>Submitted to ATC'22</p>
+<p>The memory allocator plays a key role in the performance of applications, but none of the existing profilers could pinpoint performance slowdowns caused by a memory allocator. Consequently, programmers may spend time improving application code incorrectly or unnecessarily, achieving low or no performance improvement. This paper designs the first profiler---MemPerf---to identify allocator-induced performance slowdowns, without comparing against another allocator. Based on the key observation that an allocator may impact the whole life-cycle of heap objects, including the accesses (or uses) of these objects, MemPerf proposes a life-cycle based detection to identify slowdowns caused by slow memory management operations and slow accesses separately. For the prior one, MemPerf proposes a thread-aware and type-aware performance modeling to identify slow management operations. For slow memory accesses, MemPerf utilizes a top-down approach to identify all possible reasons for slow memory accesses introduced by the allocator, mainly due to cache and TLB misses, and further proposes a unified method to identify them correctly and efficiently. Based on our extensive evaluation, MemPerf reports 98% medium and large allocator-reduced slowdowns (larger than 5%) correctly, without reporting any false positives. MemPerf also pinpoints multiple known and unknown design issues in widely-used allocators. Due to its uniqueness and usefulness, MemPerf will be an indispensable complement to existing profilers.</p>
+
+<h3>CachePerf: A Unified Cache Miss Classifier via Hybrid Hardware Sampling</h3>
+<p>Accpeted by SIGMETRICS'22</p>
+<p>The cache plays a key role in determining the performance of applications, no matter for sequential or concurrent programs on homogeneous and heterogeneous architecture. Therefore, it is important to locate and differentiate cache misses accurately, but this remains to be an unresolved issue even after decades of research. This paper proposes a unified profiling tool--CachePerf--that could correctly identify different types of cache misses while imposing reasonable overhead, differentiate issues of allocators from those of applications, and exclude minor issues without much performance impact. The core idea behind CachePerf is a hybrid sampling scheme: it employs the PMU-based coarse-grained sampling to filter out few susceptible instructions (with a large number of cache misses), and then employs the breakpoint-based fine-grained sampling to collect the memory access pattern of these instructions. Based on our evaluation, CachePerf only imposes 14% performance overhead and 19% memory overhead (for applications with large footprints), while identifying all types of cache misses correctly. CachePerf detected four new issues that cannot be detected by existing tools. CachePerf will be an indispensable complementary to existing profilers due to its effectiveness and low overhead.</p>
