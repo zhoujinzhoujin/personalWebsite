@@ -14,11 +14,11 @@
     <img src="https://github.com/zhoujinzhoujin/zhoujinzhoujin.github.io/blob/gh-pages/slowpoke.jpg?raw=true" alt="">
     <img src="https://github.com/zhoujinzhoujin/zhoujinzhoujin.github.io/blob/gh-pages/slowpoke.jpg?raw=true" alt="">
     
-    <p>Email Address: <span id="email">jinzhou@umass.edu</span> | <a href="linkedin.com/in/jin-zhou-1ab22b231">Linkedin</a></p>
+    <p>Email Address: <span id="email">jinzhou@umass.edu</span> | <a href="linkedin.com/in/jin-zhou-helloworld">Linkedin</a></p>
     
     <p>I am a third-year Ph.D. student in the Department of Electrical and Computer Engineering at UMass Amherst. </p>
     
-    <p>My advisor is <a href="https://people.umass.edu/tongping/">Prof. Tongping Liu</a>.</p>
+    <p>I am in <a href="https://people.umass.edu/tongping/">Prof. Tongping Liu</a>'s group</p>
     
     <p>My research interests include profiling, software performance, and operating systems.</p>
     
@@ -28,7 +28,7 @@
     
     <h2>Publications</h2>
 
-    <h3>CachePerf: A Unified Cache Miss Classifier via Hybrid Hardware Sampling</h3>
+    <h3>CachePerf: A Unified Cache Miss Classifier via Hybrid Hardware Sampling <a href="https://arxiv.org/abs/2203.08943">[Link]</a></h3>
     <p><span class="myself">Jin Zhou</span>, Sam Silvestro, Steven (Jiaxun) Tang, Hongyu Liu, Guangming Zeng, Bo Wu, Hang Liu, Tongping Liu</p>
     <p>Accpeted in SIGMETRICS'22</p>
     <p>The cache plays a key role in determining the performance of applications, no matter for sequential or concurrent programs on homogeneous and heterogeneous architecture. Therefore, it is important to locate and differentiate cache misses accurately, but this remains to be an unresolved issue even after decades of research. This paper proposes a unified profiling tool--CachePerf--that could correctly identify different types of cache misses while imposing reasonable overhead, differentiate issues of allocators from those of applications, and exclude minor issues without much performance impact. The core idea behind CachePerf is a hybrid sampling scheme: it employs the PMU-based coarse-grained sampling to filter out few susceptible instructions (with a large number of cache misses), and then employs the breakpoint-based fine-grained sampling to collect the memory access pattern of these instructions. Based on our evaluation, CachePerf only imposes 14% performance overhead and 19% memory overhead (for applications with large footprints), while identifying all types of cache misses correctly. CachePerf detected four new issues that cannot be detected by existing tools. CachePerf will be an indispensable complementary to existing profilers due to its effectiveness and low overhead.</p>
@@ -38,7 +38,7 @@
     <p>Submitted to ATC'22</p>
     <p>The memory allocator plays a key role in the performance of applications, but none of the existing profilers could pinpoint performance slowdowns caused by a memory allocator. Consequently, programmers may spend time improving application code incorrectly or unnecessarily, achieving low or no performance improvement. This paper designs the first profiler---MemPerf---to identify allocator-induced performance slowdowns, without comparing against another allocator. Based on the key observation that an allocator may impact the whole life-cycle of heap objects, including the accesses (or uses) of these objects, MemPerf proposes a life-cycle based detection to identify slowdowns caused by slow memory management operations and slow accesses separately. For the prior one, MemPerf proposes a thread-aware and type-aware performance modeling to identify slow management operations. For slow memory accesses, MemPerf utilizes a top-down approach to identify all possible reasons for slow memory accesses introduced by the allocator, mainly due to cache and TLB misses, and further proposes a unified method to identify them correctly and efficiently. Based on our extensive evaluation, MemPerf reports 98% medium and large allocator-reduced slowdowns (larger than 5%) correctly, without reporting any false positives. MemPerf also pinpoints multiple known and unknown design issues in widely-used allocators. Due to its uniqueness and usefulness, MemPerf will be an indispensable complement to existing profilers.</p>
 
-    <h3>NumaPerf: Predictive NUMA Profiling</h3>
+    <h3>NumaPerf: Predictive NUMA Profiling <a href="https://arxiv.org/abs/2102.05204">[Link]</a></h3>
     <p>Xin Zhao, <span class="myself">Jin Zhou</span>, Hui Guan, Wei Wang, Xu Liu, Tongping Liu</p>
     <p>Accepted in ICS'21</p>
     <p>Parallel applications are extremely challenging to achieve the optimal performance on the NUMA architecture, which necessitates the assistance of profiling tools. However, existing NUMA-profiling tools share some similar shortcomings, such as portability, effectiveness, and helpfulness issues. This paper proposes a novel profiling tool - NumaPerf - that overcomes these issues. NumaPerf aims to identify potential performance issues for any NUMA architecture, instead of only on the current hardware. To achieve this, NumaPerf focuses on memory sharing patterns between threads, instead of real remote accesses. NumaPerf further detects potential thread migrations and load imbalance issues that could significantly affect the performance but are omitted by existing profilers. NumaPerf also separates cache coherence issues that may require different fix strategies. Based on our extensive evaluation, NumaPerf is able to identify more performance issues than any existing tool, while fixing these bugs leads to up to 5.94x performance speedup.</p>
